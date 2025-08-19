@@ -1,0 +1,19 @@
+import math
+def main():
+    #getting input of the length of 3 sides from the user.
+    a = input("Enter length: ")
+    b = input("Enter length: ")
+    c = input("Enter length: ")
+    #convert all input from string to integer data type
+    a,b,c = int(a), int(b), int(c)
+    #using cosine rule on different permutations of the sides and printing out the answer
+    print(cosineRule(a,b,c))
+    print(cosineRule(b,c,a))
+    print(cosineRule(c,a,b))
+
+def cosineRule(x,y,z):
+    #manipulating the cosine rule to shift the angle to one side of the equation
+    angle = math.acos((x**2+y**2-z**2)/(2*x*y))
+    return math.degrees(angle)
+
+main()
